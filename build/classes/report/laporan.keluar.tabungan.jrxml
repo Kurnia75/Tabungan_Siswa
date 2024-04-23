@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7cc3d928-7362-4b64-a479-31d8c132e310">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="ptrans" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tb_transaksi_ambil.`kodetransaksi` AS tb_transaksi_ambil_kodetransaksi,
+     tb_transaksi_ambil.`idsiswa` AS tb_transaksi_ambil_idsiswa,
+     tb_transaksi_ambil.`idtabungan` AS tb_transaksi_ambil_idtabungan,
+     tb_transaksi_ambil.`nama` AS tb_transaksi_ambil_nama,
+     tb_transaksi_ambil.`tanggal` AS tb_transaksi_ambil_tanggal,
+     tb_transaksi_ambil.`notlp` AS tb_transaksi_ambil_notlp,
+     tb_transaksi_ambil.`saldotabungan` AS tb_transaksi_ambil_saldotabungan,
+     tb_transaksi_ambil.`ambil` AS tb_transaksi_ambil_ambil,
+     tb_transaksi_ambil.`sisatabungan` AS tb_transaksi_ambil_sisatabungan,
+     tb_transaksi_ambil.`alamat` AS tb_transaksi_ambil_alamat
+FROM
+     `tb_transaksi_ambil` tb_transaksi_ambil
+WHERE
+     idsiswa LIKE '%$P!{ptrans}%']]>
+	</queryString>
+	<field name="tb_transaksi_ambil_kodetransaksi" class="java.lang.String"/>
+	<field name="tb_transaksi_ambil_idsiswa" class="java.lang.String"/>
+	<field name="tb_transaksi_ambil_idtabungan" class="java.lang.String"/>
+	<field name="tb_transaksi_ambil_nama" class="java.lang.String"/>
+	<field name="tb_transaksi_ambil_tanggal" class="java.sql.Date"/>
+	<field name="tb_transaksi_ambil_notlp" class="java.lang.String"/>
+	<field name="tb_transaksi_ambil_saldotabungan" class="java.lang.String"/>
+	<field name="tb_transaksi_ambil_ambil" class="java.lang.String"/>
+	<field name="tb_transaksi_ambil_sisatabungan" class="java.lang.String"/>
+	<field name="tb_transaksi_ambil_alamat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="-13" width="555" height="33" forecolor="#000000" uuid="2c286bd1-31b6-41ab-9358-0be80e46e2e4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[LAPORAN KELUAR TABUNGAN SISWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="20" width="67" height="15" forecolor="#000000" uuid="554fec6d-a98a-493b-95c6-86554b972edd"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ID SISWA         :]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="67" y="20" width="55" height="15" forecolor="#000000" uuid="82cfdec1-1c3a-444a-a3d1-fb7b6ef364de"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_idsiswa}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="c80abca6-a5d4-48bd-9e93-f720cb8243a4"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" forecolor="#000000" uuid="a2216081-df5d-47b1-8b01-b6651244430c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="55" height="15" forecolor="#000000" uuid="a1245b60-c2f5-4e4d-89de-88822bf0186e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[KDTR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="67" height="15" forecolor="#000000" uuid="4b75814a-f270-46f8-acdf-7677ff2df62e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ID TABUNGAN :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="55" y="19" width="78" height="15" forecolor="#000000" uuid="6bfb05d4-6220-4da9-8aba-9de8a1bdeb6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NAMA SISWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="133" y="19" width="55" height="15" forecolor="#000000" uuid="c7ccad2d-7deb-4203-8395-cc345d013e76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="188" y="19" width="55" height="15" forecolor="#000000" uuid="9d5383f0-ed92-4446-b1a2-642484f704e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NO.TLP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="243" y="19" width="55" height="15" forecolor="#000000" uuid="49239b97-f575-47d5-9173-d8de18884cdd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SALDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="298" y="19" width="55" height="15" forecolor="#000000" uuid="4720c670-e55b-4d3d-91be-7d33f27e086c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TARIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="353" y="19" width="55" height="15" forecolor="#000000" uuid="28748fc6-b97b-416a-89b0-5844f61df1a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SISA TABUNGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="408" y="19" width="147" height="15" forecolor="#000000" uuid="0257e3d0-7e12-45c7-9bbb-68aeab9774c0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="358" y="0" width="197" height="15" forecolor="#000000" uuid="c19e4c66-a5b9-4faf-8a25-12b0e92dcc28"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMMM yyyy", new java.util.Locale("id")).format (new Date())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="15" width="555" height="1" uuid="e485693a-d7a2-4463-88cf-7bcb8ccc5606"/>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="67" y="0" width="55" height="15" forecolor="#000000" uuid="a3ae2710-6323-4abf-b897-2b1a3fdb3bce"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_idtabungan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="55a321f7-6998-40bc-997c-c3197caccd67"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" forecolor="#000000" uuid="eeeff7e7-1b37-4c9b-9923-9c0259137062"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="55" height="15" forecolor="#000000" uuid="7545fa3b-b380-4b97-8f09-98fe180728ec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_kodetransaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="55" y="0" width="78" height="15" forecolor="#000000" uuid="6290afb7-4b01-4d23-880a-62b7cf9a086b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_nama}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Detail" x="133" y="0" width="55" height="15" forecolor="#000000" uuid="acf5a627-3571-4e4e-8634-a87eb1b31b4e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="188" y="0" width="55" height="15" forecolor="#000000" uuid="39f2678f-ef16-40d6-a112-14b1b1e28433"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_notlp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="243" y="0" width="55" height="15" forecolor="#000000" uuid="f78f1b30-f4c8-455a-8d40-ba9e27c97c5f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_saldotabungan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="298" y="0" width="55" height="15" forecolor="#000000" uuid="a12d878e-0bd4-4238-9a47-fd54e58b483c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_ambil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="353" y="0" width="55" height="15" forecolor="#000000" uuid="bd90ae01-5a96-406d-a6da-dbb3d684e5b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_sisatabungan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="408" y="0" width="147" height="15" forecolor="#000000" uuid="d063993f-b293-44b3-982c-b325331fdc71"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_ambil_alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" forecolor="#000000" uuid="281367dd-c6bb-4756-b7c6-6261ea811414"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#000000" uuid="34bb3b47-e0d3-4724-b4d0-7ef5140466a2"/>
+				<textElement textAlignment="Right">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#000000" uuid="00b79c21-13d5-4b13-be8f-a7d7ec29c662"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
